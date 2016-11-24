@@ -92,6 +92,7 @@ class Cycles {
     function adminPanel() {
     	// Save Settings
         if (isset($_POST['submit'])) {
+
         	// Check nonce
         	if (!isset($_POST[$this->plugin_name.'_nonce'])) {
 	        	// Missing nonce	
@@ -100,18 +101,25 @@ class Cycles {
 	        	// Invalid nonce
 	        	$this->errorMessage = __('Invalid nonce specified. Settings NOT saved.', $this->plugin_name);
         	} else {        	
-	        	// Save
+	        	//echo "<pre>"; print_r($_POST); echo "</pre>"; die;
 	    		update_option('ihaf_insert_header', $_POST['ihaf_insert_header']);
 	    		update_option('toggleHeader', $_POST['toggleHeader']); 
+	    		update_option('visible_for', $_POST['cycle_options']['visible-for']); 
+				update_option('visble_role', maybe_serialize($_POST['cycle_options']['visible-roles'])); 
 				$this->message = __('Settings Saved.', $this->plugin_name);
 			}
         }
+
+       
         
         // Get latest settings
         $this->settings = array(
         	'ihaf_insert_header' => stripslashes(get_option('ihaf_insert_header')),
         	'toggleHeader' => stripslashes(get_option('toggleHeader')),
         	'ihaf_insert_footer' => stripslashes(get_option('ihaf_insert_footer')),
+        	'visible_for'=>stripslashes(get_option('visible_for')),
+        	'visible_roles'=>stripslashes(get_option('visble_role')) //here it was visible_roles
+
         );
         
     	// Load Settings Form
@@ -237,10 +245,29 @@ class Cycles {
 	 * @since    1.0.0
 	 */
 	public function run() {
+		require_once(ABSPATH. "wp-includes/pluggable.php");
+		require_once(ABSPATH. "wp-includes/query.php");
 		if(get_option('toggleHeader') == "on")
 		{
-			if(is_admin() ||  is_feed() || is_robots() || is_trackback()){/*do nothing */}
-			else{add_action('wp_head', $this->get_iheader());} 
+			$user = wp_get_current_user();
+			$user->roles[0];
+			if(is_admin() ||  is_feed() || is_robots() || is_trackback()){ /* do nothing */}
+			else{
+				$visible_for=get_option('visible_for');
+				$visible_roles=maybe_unserialize(get_option('visble_role'));
+				//echo "<pre>";
+				//print_r($visible_roles);
+				//echo "</pre>";
+				$curUserRole=$user->roles[0];
+				if($visible_for=="all"){
+					add_action('wp_head', $this->get_iheader());
+				}else if($visible_for=="users" && is_user_logged_in()){
+					add_action('wp_head', $this->get_iheader());
+				}else if($visible_for=="roles" && is_array($visible_roles) && in_array($curUserRole, $visible_roles)){
+					add_action('wp_head', $this->get_iheader());
+				}
+
+			} 
 		}
 		$this->loader->run();
 	}
