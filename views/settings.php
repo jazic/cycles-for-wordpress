@@ -38,13 +38,13 @@
 				<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 	                 
 	                    <div id="post-body-content" >
-							<?php if($this->settings['toggleHeader']=="on") { ?>
+							<?php if($this->settings['toggleHeader']=="off") { ?>
 							<div class="meta-box-sortables ui-sortable">
 							<?php } else { ?>
 								<div class="meta-box-sortables ui-sortable notice is-dismissible">
 							<?php } ?>
 							
-							<?php if($this->settings['toggleHeader']=="off") { ?>
+							<?php if($this->settings['toggleHeader']=="on") { ?>
 								<div >
 
 									<h2><span><?php esc_attr_e( 'A (free) Cycles account is required', 'wp_admin_style' ); ?></span></h2>
@@ -105,14 +105,14 @@
 								</p>
 								</td>
 								</tr>
-								<tr><td>
+								<tr><td valign="top" style="padding-top: 10px;">
 		                    		<label for="ihaf_insert_header"><strong><?php _e('Cycles JS code snippet:', $this->plugin_name); ?></strong></label></td>
 									<td><p>
 		                    		<textarea placeholder="<?php _e('&lt;!-- insert Cycles script here --&gt;', $this->plugin->name); ?>" name="ihaf_insert_header" id="ihaf_insert_header" class="widefat" rows="8" style="font-family:Courier New;"><?php echo $this->settings['ihaf_insert_header']; ?></textarea>	
 		                    		<?php _e('Enter Cycles JS code snippet for your project. You can find it in your <a target="_blank" href="https://app.getcycles.io/projects">Cycles Project</a> settings.', $this->plugin_name); ?>	
 		                    	</p></td></tr>
 		                    	<tr>
-									<th scope="row">
+									<th valign="top" scope="row">
 							               Enable Cycles for:
 									</th>
 									<td>
@@ -138,7 +138,7 @@
 										$check = false;
 
 										foreach ($roles as $role_value => $role_name) { ?>
-											<p>
+											<p style="line-height: 22px; height: 8px;">
 											  <input type="checkbox"  <?php echo (is_array(maybe_unserialize($this->settings['visible_roles'])) && in_array($role_value, maybe_unserialize($this->settings['visible_roles'])))?"checked='checked'":"";  ?> name="cycle_options[visible-roles][]" value="<?php echo $role_value; ?>" id="us-visible-for-role-<?php echo $ctn;?>"/>
 											  <label for="us-visible-for-role-<?php echo $ctn;?>"><?php echo $role_name; ?></label>
 											</p>
