@@ -1,114 +1,112 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+=== Cycles ===
+Contributors: Cycles
+Tags: design, feedback, approval, mockup, client, wireframe, approvals, design review, comment, webdesign, freelancer, studio, agency, graphic designers, graphics, webdev, style guide, infographics, project, cycles, sign-off
+Requires at least: 4.0
+Tested up to: 4.6.1
+Stable tag: 1.1
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Visual feedback and approvals for web development projects. Get organized, insightful feedback from clients and teammates directly on the web page.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+**[Cycles](https://cycleshq.com)** allows you to collect visual feedback and approvals on your website.  Share your web pages with clients and colleagues, who view your work in their browser and post feedback directly on your webpages.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+See Cycles in action - **[Live Demo](https://demo.cycleshq.com)**
 
-A few notes about the sections above:
+#### Overview
+Cycles allows you to:
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+* **Collect crystal clear client feedback** - With Cycles, your clients comment directly on web pages, so you can see exactly what they’re referencing and understand what they mean. Clients view the website in their browser, and click directly on the page to comment. Feedback remains organized, eliminating back and forth emails and miscommunication.
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+* **Record approvals/sign off in the browser** - Many clients respond differently when reviewing a website that feels closer to the “finished product.” When you've made any requested changes, your client can approve the page.  Cycles keeps a record of the time, date, and name of the approver in case you need it later.
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+* **Keep project members informed** - Configure Cycles to send email notifications whenever someone makes a comment or approval.
+
+* **Import feedback into 3rd party services** - Connect your project to Trello, Basecamp, Asana, Slack, Help Scout, or any 3rd party service with project based email addresses, to bring feedback and approvals into your team's project management workflow.
+
+[youtube https://www.youtube.com/watch?v=DBmSD_6q1co]
+
+
+> #### Note: You'll need a (free) account to use Cycles
+>
+>  A (free) Cycles account enables:
+>
+> * A record of all comments, replies, and approvals (outside of your WordPress database or client's site)
+> * Easy notifications and integrations without configuring your WordPress email settings
+> * Feedback and approvals on any web page or site
+>
+> Free accounts have no trial time limits, and include all visual feedback and approval features.
+>
+> To get started, go to [https://cycleshq.com](https://cycleshq.com/).
+
+#### Plugin features
+
+**NEW: Control which visitors see Cycles / leave feedback**
+Enable Cycles for all visitors, or restrict to signed in Wordpress users, or users certain roles.  Now you can install Cycles on a "live" site, but restrict feedback collection to particular users.
+
+**Enable Cycles for every page on your site**
+Copy your unique project script into the plugin's form field, and enable Cycles for every page on your site.
+
+**Quickly enable / disable Cycles**
+Use the plugin to switch Cycles on or off for your website.
+
+
+
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `cycles.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+1. Upload the entire plugin folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the `Plugins` menu in WordPress
+3. On the [Cycles web app](https://app.getcycles.io/projects), copy your project unique JavaScript snippet.
+4. On your WordPress site, go to `Settings > Cycles` to paste the script in the appropriate field.
+5. All done! Load any web page/post to see the Cycles button in the bottom right.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Go to `Settings > Cycles` and paste your project's Cycles script
+2. When installed, Cycles appears on all pages and posts
+3. Use Cycles to comment directly on webpages
+4. View feedback and approvals directly on the page, in the web app, or via email notifications.
 
-== Changelog ==
+== Frequently Asked Questions ==
+
+Thank you for installing and using Cycles.  If you're having trouble with the plugin and can't find a solution below, please create a support topic (link below). We closely monitor and will respond as soon as possible.
+
+For issues with the Cycles web app, further documentation is available at https://help.cycleshq.com
+
+For other issues, questions, suggestions, feedback, please email us at [help@cycleshq.com](help@cycleshq.com).
+
+**How do I get started?**
+
+Once you've installed the plugin and embedded the unique project script, send clients and colleagues to your website and let Cycles collect their feedback and approvals.
+
+**Do clients need to register an account?**
+
+No! Your clients need only open your URL in a browser to begin leaving feedback.
+
+**Do I need to register an account?**
+
+Yes, you'll need a free Cycles account so Cycles can store your comments/approvals and send notifications.  Free accounts have no trial time limits, and include all visual feedback and approval features.  You can find out more @ https://cycleshq.com
+
+**How do I get more help?**
+If you encounter a technical issue, please email us at **help@cycleshq.com**.
+
+== Change Log ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
+November 28th, 2016
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+* New: Control which visitor see the Cycles button: All visitors, signed in users, or by user role
+* Fixed: Minor bugs
+
+= 1.0 =
+November 8th, 2016
+
+* New: Copy Cycles script code into your WordPress site
+* Tested: 4.6.1
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+= 1.1 =
+Enable Cycles for signed-in users or by user role, plus bug fixes.
