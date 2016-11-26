@@ -113,7 +113,7 @@
 		                    	</p></td></tr>
 		                    	<tr>
 									<th valign="top" scope="row" align="left">
-							               Enable Cycles for:
+							               Display Cycles for:
 									</th>
 									<td>
 									  <fieldset id="us-settings-form">
