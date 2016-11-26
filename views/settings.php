@@ -105,14 +105,14 @@
 								</p>
 								</td>
 								</tr>
-								<tr><td valign="top" style="padding-top: 10px;">
-		                    		<label for="ihaf_insert_header"><strong><?php _e('Cycles JS code snippet:', $this->plugin_name); ?></strong></label></td>
+								<tr><td valign="top" style="padding-top: 10px; padding-right: 32px">
+		                    		<label for="ihaf_insert_header"><strong><?php _e('Cycles JS snippet:', $this->plugin_name); ?></strong></label></td>
 									<td><p>
 		                    		<textarea placeholder="<?php _e('&lt;!-- insert Cycles script here --&gt;', $this->plugin->name); ?>" name="ihaf_insert_header" id="ihaf_insert_header" class="widefat" rows="8" style="font-family:Courier New;"><?php echo $this->settings['ihaf_insert_header']; ?></textarea>
 		                    		<?php _e('Enter Cycles JS code snippet for your project. You can find it in your <a target="_blank" href="https://app.getcycles.io/projects">Cycles Project</a> settings.', $this->plugin_name); ?>
 		                    	</p></td></tr>
 		                    	<tr>
-									<th valign="top" scope="row">
+									<th valign="top" scope="row" align="left">
 							               Enable Cycles for:
 									</th>
 									<td>
@@ -130,7 +130,7 @@
 										  </label>
 									  </fieldset>
 
-									  <div style="display: none;" class="form-table" id="us-visible-roles">
+									  <div style="display: none; margin-left: 32px" class="form-table" id="us-visible-roles">
 										<?php
 										$wp_roles = new WP_Roles();
 										$roles = $wp_roles->get_names();
