@@ -92,6 +92,7 @@ class Cycles {
     function adminPanel() {
     	// Save Settings
         if (isset($_POST['submit'])) {
+
         	// Check nonce
         	if (!isset($_POST[$this->plugin_name.'_nonce'])) {
 	        	// Missing nonce	
@@ -100,18 +101,25 @@ class Cycles {
 	        	// Invalid nonce
 	        	$this->errorMessage = __('Invalid nonce specified. Settings NOT saved.', $this->plugin_name);
         	} else {        	
-	        	// Save
+	        	
 	    		update_option('ihaf_insert_header', $_POST['ihaf_insert_header']);
 	    		update_option('toggleHeader', $_POST['toggleHeader']); 
+	    		update_option('visible_for', $_POST['cycle_options']['visible-for']); 
+				update_option('visble_role', maybe_serialize($_POST['cycle_options']['visible-roles'])); 
 				$this->message = __('Settings Saved.', $this->plugin_name);
 			}
         }
+
+       
         
         // Get latest settings
         $this->settings = array(
         	'ihaf_insert_header' => stripslashes(get_option('ihaf_insert_header')),
         	'toggleHeader' => stripslashes(get_option('toggleHeader')),
         	'ihaf_insert_footer' => stripslashes(get_option('ihaf_insert_footer')),
+        	'visible_for'=>stripslashes(get_option('visible_for')),
+        	'visible_roles'=>stripslashes(get_option('visble_role')) 
+
         );
         
     	// Load Settings Form
@@ -237,15 +245,32 @@ class Cycles {
 	 * @since    1.0.0
 	 */
 	public function run() {
-		if(get_option('toggleHeader') == "on")
-		{
-			if(is_admin() ||  is_feed() || is_robots() || is_trackback()){/*do nothing */}
-			else{add_action('wp_head', $this->get_iheader());} 
-		}
+		$this->loader->add_action('wp_head', $this,"get_iheader");
 		$this->loader->run();
 	}
 	public function get_iheader() {
-		 echo stripslashes(get_option('ihaf_insert_header'));
+		if(get_option('toggleHeader') == "on")
+		{
+			$user = wp_get_current_user();
+			$user->roles[0];
+
+			if(is_admin() ||  is_feed() || is_robots() || is_trackback()){ /* do nothing */}
+			else{
+				$visible_for=get_option('visible_for');
+				$visible_roles=maybe_unserialize(get_option('visble_role'));
+				
+				$curUserRole=$user->roles[0];
+				if($visible_for=="all" && !is_feed()){
+					echo stripslashes(get_option('ihaf_insert_header'));
+				}else if($visible_for=="users" && is_user_logged_in() && !is_feed()){
+					echo stripslashes(get_option('ihaf_insert_header'));
+				}else if($visible_for=="roles" && is_array($visible_roles) && in_array($curUserRole, $visible_roles) && !is_feed()){
+					echo stripslashes(get_option('ihaf_insert_header'));
+				}
+
+			} 
+		}
+
 	}
 
 	/**

@@ -15,8 +15,8 @@
  * @wordpress-plugin
  * Plugin Name:       Cycles
  * Plugin URI:        https://cycleshq.com/
- * Description:       The WordPress plugin will help users install  the script so they don’t have to mess with any code
- * Version:           1.0
+ * Description:       Embeds the Cycles project script into your website, enabling visual feedback and approvals.
+ * Version:           1.1
  * Author:            Cycles
  * Author URI:        https://cycleshq.com/
  * Text Domain:       cycles
