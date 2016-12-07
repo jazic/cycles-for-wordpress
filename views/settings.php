@@ -38,13 +38,13 @@
 				<div id="normal-sortables" class="meta-box-sortables ui-sortable">
 
 	                    <div id="post-body-content" >
-							<?php if($this->settings['toggleHeader']=="on") { ?>
+							<?php if($this->settings['ihaf_insert_header']!="") { ?>
 							<div class="meta-box-sortables ui-sortable">
 							<?php } else { ?>
 								<div class="meta-box-sortables ui-sortable notice is-dismissible">
 							<?php } ?>
 
-							<?php if($this->settings['toggleHeader']=="off") { ?>
+							<?php if($this->settings['ihaf_insert_header']=="") { ?>
 								<div >
 
 									<h2><span><?php esc_attr_e( 'A (free) Cycles account is required', 'wp_admin_style' ); ?></span></h2>
@@ -76,7 +76,7 @@
 								 <!--<div class="notice"><p>Find your embed code and manage notifications in your <a target="_blank" href="https://app.getcycles.io/projects">Cycles Project</a> settings.</p></div> -->
 								 <?php
 								}
-								if ($this->settings['toggleHeader'] == "off") {
+								if (if($this->settings['ihaf_insert_header']=="") {
 									?>
 									<div class="error fade notice notice-info is-dismissible"><p>Cycles JS code snippet is currently DISABLED.</p></div>
 									<?php
@@ -126,7 +126,7 @@
 										  </label>
 										  <br>
 										  <label for="us-visible-for-roles">
-										  	<input type="radio" <?php echo ($this->settings['visible_for']=="roles")?' checked="checked" ':"";?> name="cycle_options[visible-for]" value="roles" id="us-visible-for-roles"/> <span>Only users with a specific role</span>
+										  	<input type="radio" <?php echo ($this->settings['visible_for']=="roles")?' checked="checked" ':"";?> name="cycle_options[visible-for]" <?php if($this->settings['visible_for']==""){ ?> checked="checked" <?php }?> value="roles" id="us-visible-for-roles"/> <span>Only users with a specific role</span>
 										  </label>
 									  </fieldset>
 
