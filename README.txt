@@ -10,6 +10,8 @@ Visual feedback and approvals for web development projects. Get organized, insig
 
 == Description ==
 
+**NEW: Control which visitors see Cycles / leave feedback**
+
 **[Cycles](https://cycleshq.com)** allows you to collect visual feedback and approvals on your website.  Share your web pages with clients and colleagues, who view your work in their browser and post feedback directly on your webpages.
 
 See Cycles in action - **[Live Demo](https://demo.cycleshq.com)**
@@ -43,12 +45,15 @@ Cycles allows you to:
 #### Plugin features
 
 **NEW: Control which visitors see Cycles / leave feedback**
+
 Enable Cycles for all visitors, or restrict to signed in Wordpress users, or users certain roles.  Now you can install Cycles on a "live" site, but restrict feedback collection to particular users.
 
 **Enable Cycles for every page on your site**
+
 Copy your unique project script into the plugin's form field, and enable Cycles for every page on your site.
 
 **Quickly enable / disable Cycles**
+
 Use the plugin to switch Cycles on or off for your website.
 
 
@@ -94,7 +99,7 @@ If you encounter a technical issue, please email us at **help@cycleshq.com**.
 
 == Change Log ==
 
-= 1.0 =
+= 1.1 =
 November 28th, 2016
 
 * New: Control which visitor see the Cycles button: All visitors, signed in users, or by user role
